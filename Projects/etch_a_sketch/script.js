@@ -15,7 +15,14 @@ function createGrid(size) {
         const div = document.createElement('div');
         div.classList.add('grid-item');
         div.addEventListener('mouseover', () => {
-            div.classList.add('hover');
+            // Generate random RGB values (0-255)
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            
+            // Apply the random color
+            div.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
         });
         grid.appendChild(div);
     }
@@ -32,7 +39,9 @@ resetButton.addEventListener('click', () => {
 
 clearButton.addEventListener('click', () => {
     const gridItems = document.querySelectorAll('.grid-item');
-    gridItems.forEach(item => item.classList.remove('hover'));
+    gridItems.forEach(item => {
+        item.style.backgroundColor = '#ffffff'; // Reset to white
+    });
 });
 
 // Create initial grid
