@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    width: 500px;
+    height: 500px;
+    border: 2px solid #000;
+}
+
+.grid-item {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.grid-item.hover {
+    background-color: #333;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
